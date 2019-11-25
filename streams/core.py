@@ -28,6 +28,14 @@ class Stream:
         self._ls = list(filter(func, self._ls))
         return self
 
+    def find_first(self):
+        """Get the first element of the list"""
+        if len(self._ls) > 1:
+            self._ls = self._ls[:1]
+            return self
+
+        raise Exception("Find First Don't have enough elements")
+
     def collect(self, func):
         """ Collect and output the lists """
         func(self._ls)
