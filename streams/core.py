@@ -40,8 +40,21 @@ class Stream:
 
     def for_each(self, func):
         """ print each element """
-        for ls in self._ls:
-            func(ls)
+        if isinstance(self._ls, list): 
+            for ls in self._ls:
+                func(ls)
+        else:
+            func(self._ls)
+        return self
+
+    def sort(self):
+        """ print each element """
+        self._ls = sorted(self._ls)
+        return self
+
+    def average(self):
+        self._ls = sum(self._ls)/len(self._ls)
+        return self
 
     def collect(self, func):
         """ Collect and output the lists """

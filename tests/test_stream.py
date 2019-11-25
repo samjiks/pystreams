@@ -58,3 +58,22 @@ def test_stream_for_each(capsys):
                             for_each(print)
     captured = capsys.readouterr()
     assert captured.out == "20\n25\n30\n6675\n"
+
+
+def test_stream_sorted(capsys):
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).sort(). \
+                            for_each(print)
+    captured = capsys.readouterr()
+    assert captured.out == "1\n2\n23\n44\n"
+
+
+def test_average_for_each(capsys):
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).average(). \
+                            for_each(print)
+    captured = capsys.readouterr()
+    assert captured.out == "17.5\n"
+
+
+  

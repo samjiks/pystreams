@@ -39,9 +39,25 @@ A library to filter out your data from your lists. Useful for streaming data and
     actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5). \
                             for_each(print)    
     Output:
-    
+
     20
     25
     30
     6675
 
+    # using sort in lists
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).sort(). \
+                            for_each(print)
+    Output:
+    1
+    2
+    23
+    44
+
+    # average
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).average(). \
+                            for_each(print)
+    Output:
+    17.5
