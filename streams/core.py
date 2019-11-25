@@ -38,6 +38,11 @@ class Stream:
 
         raise errors.EmptyListException("Find First Don't have enough elements")
 
+    def for_each(self, func):
+        """ print each element """
+        for ls in self._ls:
+            func(ls)
+
     def collect(self, func):
         """ Collect and output the lists """
         func(self._ls)

@@ -1,7 +1,8 @@
+import sys
+
 import pytest
 
 import streams
-
 
 
 def test_filter_stream():
@@ -49,3 +50,13 @@ def test_find_first_stream_with_empty_list(capsys):
         actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5).find_first(). \
                                 collect(print)
         assert actuals == [5]
+
+
+def test_stream_for_each(capsys):
+    list_of_data = [4, 5, 6, 1335]
+
+    actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5). \
+                            for_each(print)
+
+    captured = capsys.readouterr()
+    assert captured.out == "20\n25\n30\n6675\n"
