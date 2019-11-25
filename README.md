@@ -1,10 +1,12 @@
+  [![Build Status](https://travis-ci.org/samjiks/pystreams.svg?branch=master)](https://travis-ci.org/samjiks/pystreams)
+
 # PyStreams
 
-A library to filter out your data from your lists. Useful for streaming data and store data into storages
+A library to filter out your data from your lists. Useful for streaming data and store data into storages. An Idea from Java8 Streams.
 
 ## Examples
 
-'''
+
 
     import streams
 
@@ -25,4 +27,3 @@ A library to filter out your data from your lists. Useful for streaming data and
         actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5). \
                             filter(lambda x: x > 25).collect(print)
         assert actuals == [35]
-'''
