@@ -40,7 +40,7 @@ class Stream:
 
     def for_each(self, func):
         """ print each element """
-        if isinstance(self._ls, list): 
+        if isinstance(self._ls, list):
             for ls in self._ls:
                 func(ls)
         else:
@@ -53,7 +53,8 @@ class Stream:
         return self
 
     def average(self):
-        self._ls = sum(self._ls)/len(self._ls)
+        """ Get the average of the list"""
+        self._ls = sum(self._ls) / len(self._ls)
         return self
 
     def collect(self, func):
