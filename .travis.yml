@@ -1,0 +1,21 @@
+language: python
+
+matrix:
+  include:
+    - python: 3.7
+
+install:
+  # Install dependencies
+  - python3 -m venv .venv
+  - source .venv/bin/activate
+  - pip install -r requirements
+
+script:
+  - coverage run run_tests.py
+  - flake8 streams
+
+after_success:
+  - codecov
+
+notifications:
+  email: false

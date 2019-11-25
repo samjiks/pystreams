@@ -1,0 +1,9 @@
+[run]
+source = 
+    streams
+[report]
+omit =
+    tests/
+
+exclude_lines =
+    if __name__ == '__main__':
