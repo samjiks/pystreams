@@ -6,8 +6,8 @@ class Stream:
     Stream of data from homogeneous lists
 
     Streams are built on previous functions passing data to
-    lower functions connecting the lower functions to get 
-    refined outputs
+    lower functions connecting the lower functions to get
+    refined outputs.
     """
 
     def __init__(self, ls):
