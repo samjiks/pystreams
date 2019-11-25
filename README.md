@@ -34,3 +34,14 @@ A library to filter out your data from your lists. Useful for streaming data and
                             collect(print)
     assert actuals == [5]
 
+    # using for_each 
+    list_of_data = [4, 5, 6, 1335]
+    actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5). \
+                            for_each(print)    
+    Output:
+    
+    20
+    25
+    30
+    6675
+
