@@ -2,6 +2,7 @@ from typing import List, Mapping
 
 from . import errors
 
+
 class Stream:
     """
     Stream of data from homogeneous lists
