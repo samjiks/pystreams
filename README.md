@@ -30,7 +30,6 @@ A library to filter out your data from your lists. Useful for streaming data and
 
     # find first
     list_of_data = [1, 2, 3, 5, 7]
-
     actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5).find_first(). \
                             collect(print)
     assert actuals == [5]
