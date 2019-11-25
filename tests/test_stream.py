@@ -1,5 +1,8 @@
+import pytest
 
 import streams
+
+
 
 def test_filter_stream():
     list_of_data = [1, 2, 3, 5, 7]
@@ -38,3 +41,11 @@ def test_find_first_stream(capsys):
                             collect(print)
     assert actuals == [5]
 
+
+def test_find_first_stream_with_empty_list(capsys):
+    list_of_data = []
+
+    with pytest.raises(streams.EmptyListException):
+        actuals = streams.Stream.of(list_of_data).map(lambda x: x * 5).find_first(). \
+                                collect(print)
+        assert actuals == [5]

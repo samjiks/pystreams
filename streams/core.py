@@ -1,5 +1,6 @@
 from typing import List, Mapping
 
+from . import errors
 
 class Stream:
     """
@@ -34,7 +35,7 @@ class Stream:
             self._ls = self._ls[:1]
             return self
 
-        raise Exception("Find First Don't have enough elements")
+        raise errors.EmptyListException("Find First Don't have enough elements")
 
     def collect(self, func):
         """ Collect and output the lists """
