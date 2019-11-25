@@ -1,10 +1,11 @@
-PyStreams
+# PyStreams
 
 A library to filter out your data from your lists. Useful for streaming data and store data into storages
 
-Examples
+## Examples
 
 '''
+
     import streams
 
     def test_filter_stream():
