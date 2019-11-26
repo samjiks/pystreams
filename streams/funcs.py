@@ -31,6 +31,12 @@ def sum(self):
 
 
 @streams.Stream.register_func()
-def generate(self):
-    self._ls = generate()
+def reset(self):
+    self._ls = list()
+    return self
+
+
+@streams.Stream.register_func()
+def generate(self, element, times):
+    self._ls += [element] * times
     return self
