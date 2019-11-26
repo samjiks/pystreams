@@ -1,4 +1,5 @@
-from typing import List, Mapping
+import functools
+from typing import List
 
 from . import errors
 
@@ -19,16 +20,6 @@ class Stream:
     def of(cls, ls: List):
         """ Provide a class instance way of taking lists of data """
         return cls(ls)
-
-    def map(self, func: Mapping):
-        """ Map the data from a list of data"""
-        self._ls = list(map(func, self._ls))
-        return self
-
-    def filter(self, func: Mapping):
-        """Filter functions"""
-        self._ls = list(filter(func, self._ls))
-        return self
 
     def find_first(self):
         """Get the first element of the list"""
@@ -61,3 +52,12 @@ class Stream:
         """ Collect and output the lists """
         func(self._ls)
         return self._ls
+
+    @classmethod
+    def register_func(cls):
+        def wrapper(func):
+            @functools.wraps(func)
+            def func_wrapper(*args, **kwargs):
+                return func(*args, **kwargs)
+            setattr(cls, func.__name__, func_wrapper)
+        return wrapper

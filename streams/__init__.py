@@ -1,2 +1,3 @@
 from .core import Stream
-from .errors import EmptyListException
+from .funcs import *
+from .errors import *
