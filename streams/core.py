@@ -55,6 +55,15 @@ class Stream:
 
     @classmethod
     def register_func(cls):
+        """
+        Register an external function to add more streams module
+        
+        >>> @streams.Stream.register_func()
+        >>> def filter(self, func):
+        >>>     self._ls = filter_list(func, self._ls)
+        >>>     return self
+
+        """
         def wrapper(func):
             @functools.wraps(func)
             def func_wrapper(*args, **kwargs):
