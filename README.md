@@ -61,3 +61,9 @@ A library to filter out your data from your lists. Useful for streaming data and
                             for_each(print)
     Output:
     17.5
+
+    # Using limits
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).limit(2).collect(print)
+    Output:
+    [23, 2]

@@ -76,4 +76,7 @@ def test_average_for_each(capsys):
     assert captured.out == "17.5\n"
 
 
-  
+def test_limit():
+    list_of_data = [23, 2, 1, 44]
+    actuals = streams.Stream.of(list_of_data).limit(2).collect(print)
+    assert actuals == [23, 2]
