@@ -13,6 +13,11 @@ def filter_list(func: streams.Stream, ls: List) -> List:
     return list(filter(func, ls))
 
 
+def sum_list(ls: List) -> List:
+    """util to help filter function from a list"""
+    return sum([element for element in ls if isinstance(element, int)])
+
+
 def is_list(ls: List) -> bool:
     """ check if it is a list """
     return isinstance(ls, list)

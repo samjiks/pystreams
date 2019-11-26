@@ -2,12 +2,13 @@
 
 from os.path import exists
 from setuptools import setup
+import streams
 
 packages = ['streams']
 
 
 setup(name='pystreams',
-      version='0.0.1',
+      version=streams.__version__,
       description='Streams',
       url='http://github.com/samjiks/pystreams/',
       maintainer='Samuel Thampy',

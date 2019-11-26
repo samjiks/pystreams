@@ -67,3 +67,14 @@ A library to filter out your data from your lists. Useful for streaming data and
     actuals = streams.Stream.of(list_of_data).limit(2).collect(print)
     Output:
     [23, 2]
+
+    # Using Sum
+    list_of_data = [1, 2, 3, 5, 7]
+    actuals = streams.Stream.of(list_of_data). \
+        sum().collect(print)
+
+    Output:
+    18
+    Note:- if a element has a string. It won't calculate, even it is "7".
+
+    

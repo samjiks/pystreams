@@ -1,6 +1,6 @@
 import streams as streams
 
-from .utils import map_list, filter_list
+from .utils import map_list, filter_list, sum_list
 
 
 @streams.Stream.register_func()
@@ -21,4 +21,16 @@ def filter(self, func):
 @streams.Stream.register_func()
 def limit(self, max):
     self._ls = self._ls[:max]
+    return self
+
+
+@streams.Stream.register_func()
+def sum(self):
+    self._ls = sum_list(self._ls)
+    return self
+
+
+@streams.Stream.register_func()
+def generate(self):
+    self._ls = generate()
     return self
