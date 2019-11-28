@@ -77,4 +77,10 @@ A library to filter out your data from your lists. Useful for streaming data and
     18
     Note:- if a element has a string. It won't calculate, even it is "7".
 
-    
+    # 
+    reset and generate data
+    list_of_data = [1, 2, 3, 5, 7]
+    actuals = streams.Stream.of(list_of_data).reset(). \
+        generate(element=int("1"), times=4).sum().collect(print)
+    Output:
+    4
